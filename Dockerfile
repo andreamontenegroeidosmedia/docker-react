@@ -15,6 +15,9 @@ CMD [ "npm", "run", "build" ]
 
 FROM nginx
 
+# Tells Elastic Beanstalk what port to use
+EXPOSE 80
+
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # Image default command will start NGINX
